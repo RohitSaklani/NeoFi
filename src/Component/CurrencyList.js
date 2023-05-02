@@ -1,10 +1,8 @@
 import { useState } from "react";
 import "../styles/currencylist.css";
-import { initial } from "../Constant";
 
 export default function CurrencyList({ value }) {
   const { currencyList, selectedCurr, setSelectedCurr, setShowList } = value;
-  const [search, setSearch] = useState("");
 
   const [searchedList, setSearchedList] = useState(currencyList);
 
@@ -20,7 +18,7 @@ export default function CurrencyList({ value }) {
     <div className="overlay">
       <div className="list-card">
         <button className="cancel-btn" onClick={() => setShowList(false)}>
-          <img src="/assets/cross.png"></img>
+          <img src="/assets/cross.png" alt="asdf"></img>
         </button>
         <div className="search">
           <img src="/assets/search.png" alt="asdf" />
@@ -34,7 +32,7 @@ export default function CurrencyList({ value }) {
                 setShowList(false);
               }}
             >
-              <img src={ele.image}></img>
+              <img src={ele.image} alt="asdf"></img>
               <p>{ele.name}</p>
               {ele.id === selectedCurr.id ? <span>&#10003;</span> : null}
             </li>
